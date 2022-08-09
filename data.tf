@@ -21,6 +21,8 @@ data "aws_instances" "instance" {
   }
 }
 
+
+//to check the outputs of that particular data source
 output "instance" {
   value = data.aws_instances.instance
 }
