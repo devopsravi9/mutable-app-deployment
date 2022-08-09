@@ -19,10 +19,11 @@ data "aws_instances" "instance" {
   instance_tags = {
     Name = "${var.COMPONENT}-${var.ENV}"
   }
+  instance_state_names = ["running"]
 }
 
 
 //to check the outputs of that particular data source
-output "instance" {
-  value = data.aws_instances.instance
-}
+//output "instance" {
+//  value = data.aws_instances.instance
+//}
