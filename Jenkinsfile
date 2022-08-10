@@ -15,6 +15,7 @@ pipeline {
       steps {
         sh '''
           terraform init
+//          terraform apply -auto-approve -var ENV=${ENV} -var COMPONENT=${COMPONENT} parallelism=1
           terraform apply -auto-approve -var ENV=${ENV} -var COMPONENT=${COMPONENT}
         '''
         }
@@ -26,3 +27,5 @@ pipeline {
       }
     }
   }
+
+// parallelism = 1 or all, to deploy content to  all instances of one component at a time or one after one.
